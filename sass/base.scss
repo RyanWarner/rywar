@@ -1,0 +1,203 @@
+::selection {
+  background: lighten($red,30%); /* Safari */
+}
+
+::-moz-selection {
+  background: lighten($red,30%); /* Firefox */
+}
+
+.teal{
+  color:$teal;
+}
+
+a{
+  display: inline-block;
+
+  color:$red;
+  text-decoration:none;
+
+  &:hover{
+    color:$teal;
+  }
+}
+
+.dark_gray{
+  color: $dark_gray;
+
+  &:hover{
+    color:$teal;
+  }
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'AnonymousPro';
+
+    src: url('../fonts/Anonymous Pro.ttf');
+}
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Icons';
+
+    src: url('../fonts/icons.ttf');
+}
+
+body, html{
+  min-height:100%;
+  margin:0;
+  padding:0;
+  background-color:#f5f6ef;
+
+  font-family:$font;
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+input[type="text"], textarea, .textarea-wrapper{
+  @include border-radius(3px);
+  min-width:150px;
+  min-height:48px;
+  padding:0;
+  padding-right:15px;
+  padding-left:15px;
+  border:1px solid #d2d3cd;
+  background-color:$darker_bg;
+
+  color: $light_gray;
+  font-size: 18px;
+
+  // rw: these transitions in combination with cacl() were causing mobile browsers to crash.
+  /* -webkit-transition: all 0.10s ease-in-out; */
+  /* -moz-transition: all 0.10s ease-in-out; */
+  /* -ms-transition: all 0.10s ease-in-out; */
+  /* -o-transition: all 0.10s ease-in-out; */
+
+  &:focus{
+    @include box-shadow(inset 0 1px 0 rgba(255,255,255,.65),0 0px 0px darken(#d2d3cd, 2%),0 1px 4px lighten(#d2d3cd, 5%));
+    outline: none;
+    background-color:$bg_color;
+
+    color: $dark_gray;
+  }
+}
+
+input[type="submit"]{
+  @include border-radius(3px);
+  cursor:pointer;
+  padding:15px 18px 15px 18px;
+  border:0;
+  background-color:$teal;
+
+  color: $bg_color;
+  font-size: 18px;
+
+  -webkit-transition: all 0.10s ease-in-out;
+  -moz-transition: all 0.10s ease-in-out;
+  -ms-transition: all 0.10s ease-in-out;
+  -o-transition: all 0.10s ease-in-out;
+
+  &:hover{
+    background-color: darken($teal, 8%);
+  }
+}
+.center{
+  display: inline-block;
+}
+textarea{
+  padding-top:15px;
+  padding-bottom:15px;
+
+  font-size:18px;
+  line-height:27px;
+}
+
+h1{
+  margin-bottom:50px;
+  color: $text-color;
+  font-weight:normal;
+  font-size:40px;
+}
+
+h2{
+  margin:0;
+  margin-top:20px;
+  margin-bottom:22px;
+
+  color: lighten($text-color, 20%);
+  font-weight:normal;
+  font-size:35px;
+}
+
+h3{
+  margin:0;
+  margin-top:20px;
+  margin-bottom:22px;
+
+  color: lighten($text-color, 20%);
+  font-weight:normal;
+  font-size:28px;
+}
+
+p{
+  display: inline-block;
+  margin:0;
+  margin-bottom: $block-spacing;
+
+  color: $text-color;
+  font-size: 20px;
+  font-family: $font;
+  line-height: 30px;
+}
+
+header{
+  @include breakpoint(vertical) {
+    height: 142px;
+  }
+  position:relative;
+  width:100%;
+  height:212px;
+  background-color:#434343;
+  background-image:url('../images/header.jpg');
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+#the_content{
+  @include breakpoint(2) {
+    width:74%; 
+    margin-top: 10px auto;
+  }
+
+  @include breakpoint(3) {
+    width:84%; 
+    margin-top: 10px auto;
+  }
+  position:relative;
+  margin:20px auto;
+  margin-bottom:20px;
+
+  text-align:center;
+}
+
+#inner_content{
+  @include breakpoint(2) { float: none; }
+  float:left;
+}
+
+
+.center{
+  @include breakpoint(2) { width: 100%; }
+  display: inline-block;
+
+  text-align:left;
+}
+
+// rw: crayon code snippit plugin
+.crayon-syntax-inline{
+  padding:3px !important;
+}
+.crayon-syntax{
+  padding:8px !important;
+}

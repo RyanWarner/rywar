@@ -1,0 +1,17 @@
+#side{
+	@include breakpoint(2) { 
+		float: none;
+		clear: both;
+		width:100%;
+		margin-top: 20px;
+		margin-left: 0;
+	}
+	float: left;
+	width:260px;
+	margin-left:68px;
+	padding-top:18px;
+}
+
+.side_module{
+	margin-bottom:50px;
+}

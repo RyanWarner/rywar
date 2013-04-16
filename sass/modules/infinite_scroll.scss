@@ -1,0 +1,21 @@
+#navigation{
+  display:none;
+}
+
+#infscr-loading{
+  width:100%;
+
+  color:$red;
+  font-weight:normal;
+  font-style:normal;
+  font-size:18px;
+  font-family:$font;
+  text-align:center;
+  img{
+    display:none;
+  }
+}
+em{
+  font-weight:normal;
+  font-style:normal;
+}

@@ -1,0 +1,19 @@
+@mixin breakpoint($point) {
+  @if $point == 1 { 
+  	// rw: At 1220px, the .post_content shrinks by 196px to fit site 
+  	// within 1024px.
+    @media (max-width: 1220px) { @content; }
+  }
+  @else if $point == 2 { 
+  	// rw: At 1024px, the sidebar stacks on top of the content. The sidebar
+  	// is now the same width as the posts.
+  	// The width of the single column is controlled by #content.
+    @media (max-width: 1024px) { @content; }
+  }
+  @else if $point == vertical { 
+  	// rw: If the window becomes short enough, increase content realistate 
+  	// by reducing the height of the header image.
+    @media (max-height: 600px) { @content; }
+  }
+}
+
